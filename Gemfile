@@ -2,9 +2,8 @@ source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.1'
+gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -13,8 +12,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
-gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,41 +24,46 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 
+gem 'pg', group: :production
+gem 'rails_12factor', group: :production
+
 # Use ActiveModel has_secure_password
-#gem 'bcrypt', '~> 3.1.7' , :require => 'bcrypt'
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-#gem 'unicorn'
-
-#Converting html2Haml to use utf-8 encoding
-gem 'html2haml'
+# gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
-
-#seamlessly use any available CSS libraries
-gem 'bootstrap-sass'
-
-#parse CSS and add vendor prefixes to CSS rules
-gem "autoprefixer-rails"
-
-#'font-awesome-sass' is a Sass-powered version
-gem 'font-awesome-sass'
+# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-end
 
-group :development do
-# Access an IRB console on exception pages or by using <%= console %> in views
+  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
-#Haml Configuration
-  gem 'haml-rails', '>= 0.3.4'
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the background. Read more:sa https://github.com/rails/spring
   gem 'spring'
 
-  gem "erb2haml", :group => :development
+  gem 'sqlite3'
+
 end
+
+
+gem 'bootstrap-sass'
+gem "autoprefixer-rails"
+gem 'font-awesome-sass'
+gem 'omniauth-facebook'
+gem "paperclip"
+gem 'aws-sdk', '< 2.0'
+gem 'simple_form'
+gem "cancan"
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+gem "figaro"
+gem 'utf8-cleaner'
+
+
+
+
 

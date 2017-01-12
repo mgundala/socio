@@ -10,4 +10,9 @@ class UsersController < ApplicationController
 
   def matches
   end
+
+  def show
+
+  end
+
 end
