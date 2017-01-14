@@ -5,26 +5,29 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width-device-width, intial-scale=0.9">
 </head>
 <body>
-<meta name="viewport" content="width=device-width, initial-scale=0.9">
-
 <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
-  <ul class="nav-menu">
-    <li class="active"><a href="#"><i class="fa fa-users"></i>Discover</a></li>
-    <li class="active"><a href="#"><i class="fa fa-heartbeat"></i> Matches</a></li>
-    <li class="active"><a href="#"><i class="fa fa-cog"></i>Settings</a></li>
+  <ul class="nav navmenu-nav">
+    <li class="active"><a href="#"><i class="fa fa-users"></i> Discover</a></li>
+    <li><a href="#"><i class="fa fa-heart"></i> Matches</a></li>
+    <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
   </ul>
 </nav>
-<div class="navbar navbar-default navbar-fixed-top">
-  <button type="button" class="navbar-toggle nav-matches" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-    <i class="fa fa-heartbeat"></i>
-  </button>
-  <button type="button" class="navbar-toggle nav-matches" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
-    <i class="fa fa-cog"></i>
-  </button>
-</div>
-<%= image_tag "logo.png", alt: "Socio Logo", class: "logo-brand", size: "15*15" %>
-<%= yield %>
+  <div class="navbar navbar-default navbar-fixed-top">
+      <button type="button" class="navbar-toggle pull-right button-nav" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+        <i class="fa fa-cog"></i>
+      </button>
+      <button type="button" class="navbar-toggle pull-right button-nav">
+        <i class="fa fa-gittip"></i>
+      </button>
+   </div>
+  <%= yield %>
+  <script type="text/javascript">
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 </body>
 </html>
